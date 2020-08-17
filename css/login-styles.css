@@ -1,0 +1,66 @@
+
+.imglogin{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.content-login{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+  text-align: center;
+
+}
+
+.inicio-de-sesion{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap :7rem;
+    padding: 0 2rem;
+}
+
+.imglogin img{
+	width: 700px;
+}
+
+.content-login h2{
+	margin: 15px 0;
+	color: rgb(247, 16, 123);
+	text-transform: uppercase;
+	font-size: 3.4rem;
+}
+
+.content-login .boton-login {
+  
+	display: block;
+	width: 75%;
+	height: 50px;
+	border-radius: 25px;
+	outline: none;
+	border: none;
+	background:  rgb(247, 16, 123);
+	background-size: 200%;
+	font-size: 1.2rem;
+	color: rgba(255, 255, 255, 0.952);
+	font-family: 'Poppins', sans-serif;
+	text-transform: uppercase;
+	
+	cursor: pointer;
+  transition: .5s;
+  margin: auto;
+  
+}
+.form-group {
+  width: 90%;
+  border-radius: 5px;
+	outline: none;
+	border: none;
+	margin: auto;
+}
+
+.checkbox-remember {
+  font-size: 0.8rem;
+}
+  
