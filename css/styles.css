@@ -69,6 +69,8 @@ footer p {
   color: black;
 }
 
+
+
 .dropzone{
   border: 2px dashed #0087F7;
   border-radius: 5px;
@@ -143,4 +145,25 @@ a.custom-card:hover {
 }
 
 
+/* Estilos Nuevos*/
 
+.site-header .menu-user-css a {
+  color: white;
+
+}
+
+.menu-user-css{
+background-color: #343a40;
+border:1px solid rgba(0,0,0,.15);
+}
+
+.menu-intem-user-css{
+  color:white;}
+
+.menu-intem-user-css:focus,.menu-intem-user-css:hover{
+  text-decoration:underline;
+  background-color:#3b4046;}
+
+.menu-intem-user-css.active,.menu-intem-user-css:active{
+  text-decoration:none;
+  background-color:transparent;}

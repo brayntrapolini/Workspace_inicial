@@ -23,7 +23,11 @@
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-        <a class="py-2 d-none d-md-inline-block" href="index.html">Usuario</a>
+        <a class="dropdown-toggle py-2 d-none d-md-inline-block" data-toggle="dropdown" href="#" id="UserSesion"></a>
+          <div class="menu-user-css dropdown-menu">
+            <a class="menu-intem-user-css dropdown-item" href="#">Perfil</a>
+            <a class="menu-intem-user-css dropdown-item" href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+          </div>
       </div>
     </nav>
     <main role="main" class="pb-5">
@@ -36,13 +40,13 @@
               <div class="col text-right">
                   <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
                       <label class="btn btn-light active" id="sortAsc" >
-                          <input type="radio" name="options" autocomplete="off" checked>A-Z
+                          <input type="radio" name="options" autocomplete="off" checked><strong>$</strong><i class="fas fa-long-arrow-alt-down mr-1"></i>
                       </label>
                       <label class="btn btn-light" id="sortDesc" >
-                          <input type="radio" name="options" autocomplete="off">Z-A
+                          <input type="radio" name="options" autocomplete="off"><strong>$</strong><i class="fas fa-long-arrow-alt-up mr-1"></i>
                       </label>
-                      <label class="btn btn-light" id="sortByCount" >
-                          <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Cant.
+                      <label class="btn btn-light" id="sortBySoldCount" >
+                          <input type="radio" name="options" autocomplete="off"><i class="fas fa-chart-line mr-1"></i><strong>Más Vendidos</strong>
                       </label>
                   </div>
               </div>
@@ -55,14 +59,14 @@
                     <p class="font-weight-normal text-right my-2">Precio</p>
                   </div>
                   <div class="col">
-                    <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+                    <input class="form-control" type="number" placeholder="min." id="rangeFilterCostMin">
                   </div>
                   <div class="col">
-                    <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+                    <input class="form-control" type="number" placeholder="máx." id="rangeFilterCostMax">
                   </div>
                   <div class="col-3 p-0">
                     <div class="btn-group" role="group">
-                      <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
+                      <button class="btn btn-light btn-block" id="rangeFilterCost">Filtrar</button>
                       <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
                     </div>
                   </div>
@@ -70,7 +74,7 @@
               </div>
           </div>
           <div class="row">
-              <div class="list-group" id="cat-list-container">
+              <div class="list-group" id="prod-list-container">
               </div>
           </div>
       </div>

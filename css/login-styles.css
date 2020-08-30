@@ -1,3 +1,22 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+
+form{
+  width: 360px;
+  border-radius: 15px;
+	outline: none;
+	border: none;
+	background:  rgb(247, 241, 241);
+}
 
 .imglogin{
 	display: flex;

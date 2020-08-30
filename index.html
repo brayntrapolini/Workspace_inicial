@@ -15,33 +15,11 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/login-styles.css" rel="stylesheet">
 
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
-  <style>
-*{
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-}
-
-body{
-    font-family: 'Poppins', sans-serif;
-    overflow: hidden;
-}
-
-
-form{
-  width: 360px;
-  border-radius: 15px;
-	outline: none;
-	border: none;
-	background:  rgb(247, 241, 241);
-}
-
-  </style>
 
 </head>
 
@@ -54,19 +32,19 @@ form{
 
     <div class="content-login">
         
-        <form action="login-home.html">
+        <form action="login-home.html" onsubmit="return validarUser()" method="POST">
           <h2>BIENVENIDO</h2>
           
           <div class="form-group">
          
             <label for="email"><i class="fas fa-user"></i></label>
-            <input type="email" class="form-control" id="correo" placeholder="Ingrese su email"  required autofocus="">
+            <input type="email" class="form-control" id="correo" placeholder="Ingrese su email"   autofocus="" >
           </div>
           <br>
           <div class="form-group">
             
             <label for="pwd"><i class="fas fa-lock"></i></label>
-            <input type="password" class="form-control" id="contraseña" placeholder="Ingrese su contraseña"  required>
+            <input type="password" class="form-control" id="contrasenia" placeholder="Ingrese su contraseña" >
           </div>
 
           <br>
@@ -74,7 +52,7 @@ form{
             <label><input type="checkbox" name="remember">Recordarme</label>
           </div>
           <br>
-          <button type="submit" class="boton-login" onclick= "validarUser()" >Ingresar</button>
+          <button type="submit" class="boton-login">Ingresar</button>
         </form>
     </div>
   </div>
