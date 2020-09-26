@@ -6,6 +6,7 @@ var currentSortCriteria = undefined;
 var minCost = undefined;
 var maxCost = undefined;
 
+//Funciones "sort" para filtrar según corresponda
 function sortProducts(criteria, array){
     let result = [];
     if (criteria === ORDER_ASC_BY_PRICE)
@@ -34,7 +35,7 @@ function sortProducts(criteria, array){
 
     return result;
 }
-
+//Función para mostrar el listado de productos
 function showProductsList(){
 
     let htmlContentToAppend = "";

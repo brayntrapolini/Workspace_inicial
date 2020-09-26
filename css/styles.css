@@ -145,7 +145,7 @@ a.custom-card:hover {
 }
 
 
-/* Estilos Nuevos*/
+/************** ESTILOS NUEVOS ******************/
 
 .site-header .menu-user-css a {
   color: white;
@@ -167,3 +167,105 @@ border:1px solid rgba(0,0,0,.15);
 .menu-intem-user-css.active,.menu-intem-user-css:active{
   text-decoration:none;
   background-color:transparent;}
+
+ 
+.checkedTrue {
+  color: orange;
+}
+
+.userC {
+  font-weight: bold;
+}
+
+#cartCounter{
+  height: 22px;
+  width: 22px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 50%;
+  background:rgb(163, 156, 156);
+}
+
+/*************************** ESTILOS MODAL ON-SESION ***********************************/
+.title-onSesionMessage{
+  color:rgb(247, 16, 123);
+  text-align: center;
+}
+
+
+.modal-btn-onsesionmessage{
+  text-align: center;
+}
+
+.btn-new-user, .btn-load-user {
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 80%;
+  opacity: 0.9;  
+}
+
+.btn-new-user, .btn-load-user:hover {
+  opacity:1;
+}
+
+.btn-load-user {
+  background-color: rgba(255, 255, 255, 0.904);
+  color: black;
+}
+
+.btn-new-user {
+  background-color: #343a40;
+  color: rgba(255, 255, 255, 0.952);
+}
+
+   
+/*************************** ESTILOS MODAL OFF-SESION ***********************************/
+
+.title-offSesionMessage{
+  color:rgb(247, 16, 123);
+  text-align: center;
+}
+
+.modal-btn-offsesionmessage{
+  content: "";
+  clear: both;
+  display: table;
+   
+}
+
+.btn-off-yes, .btn-off-no {
+  padding: 14px 20px;
+  margin: 8px 2.5%;
+  cursor: pointer;
+  width: 45%;
+  opacity: 1;
+  border: none;
+  float: left;
+  color: rgba(255, 255, 255, 0.952);
+}
+
+.btn-off-no:hover {
+  opacity:0.9;
+}
+.btn-off-yes:hover {
+  opacity:0.9;
+}
+
+.btn-off-yes {
+  background:#46a049;
+}
+
+.btn-off-no {
+  background: #da190b;
+}
+
+
+
+
+
+
+
+  

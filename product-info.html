@@ -20,26 +20,112 @@
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="login-home.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a class="dropdown-toggle py-2 d-none d-md-inline-block" data-toggle="dropdown" href="#" id="UserSesion"></a>
-          <div class="menu-user-css dropdown-menu">
-            <a class="menu-intem-user-css dropdown-item" href="#">Perfil</a>
-            <a class="menu-intem-user-css dropdown-item" href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
-          </div>
+      <a class="py-2 d-none d-md-inline-block" href="index.html"><i class="fas fa-store"></i> Inicio</a>
+      <a class="py-2 d-none d-md-inline-block" href="categories.html"><i class="fas fa-tags"></i> Categorías</a>
+      <a class="py-2 d-none d-md-inline-block" href="products.html"><i class="fas fa-tag"></i> Productos</a>
+      <a class="py-2 d-none d-md-inline-block" href="sell.html"><i class="fas fa-cash-register"></i> Vender</a>
+      <a class="py-2 d-none d-md-inline-block" href="#" id="menuSesion" onclick="onSesion()"><i class="fas fa-user-slash"></i> Ingresar</a>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega: 20/09/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
-  </div>
+  <main role="main">
+      <div class="container mt-5">
+        <div class="text-center p-4">
+          <h2>Descripción del Producto</h2>
+          <p class="lead">Aquí encontrarás toda su información</p>
+          <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea el producto
+            seleccionado previamente, siempre se visualizará el presente: <strong>Chevrolet Onix Joy</strong>.</p>
+        </div>
+        <div class="row">
+          <div class="col-8">  
+            <div id="image-prod-info-transition" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators" id="indicator_product_Info_Images"></ol>
+              <div class="carousel-inner" id="product_Info_Images"></div>
+            </div>
+          </div>
+          <div class="col-4">
+            <h3 id="product_Info_Name"></h3>
+            <hr class="my-3">
+            <div class="row">
+              <div class="col-6">
+                <dt>Categoría</dt>
+                <dd>
+                  <p id="product_Info_Category"></p>
+                </dd>
+              </div>
+              <div class="col-6">
+                <dt>Precio</dt>
+                <dd>
+                  <p id="product_Info_Cost"></p>
+                </dd>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-3">
+                <input class="form-control" type="number" id="numberAddImput" value="1" min="1">
+              </div>
+              <div class="col-9">
+                <button type="button" class="btn btn-primary " onclick="cartAdd()" id="buttonAddCart"><i class="fas fa-cart-arrow-down"></i> Agregar al Carrito</button>
+              </div>
+            </div>
+            <hr class="my-3"> 
+            <dt>Cantidad de vendidos</dt>
+            <dd>
+              <p id="product_Info_Sold_Count"></p>
+            </dd>
+          </div>
+        </div>
+        <br>
+        <br>        
+        <dt>Descripción</dt>
+        <hr class="my-3">
+          <dd>
+            <p id="product_Info_Description"></p>
+          </dd>
+        <br>
+        <br>
+        <dt>Cuentanos tu experiencia</dt>
+        <hr class="my-3">
+        <br>
+        <form>
+            <label class="userC" id="userComm" style="text-decoration: underline;"></label>
+            <br>
+            <br>
+            <div class="form-group">
+              <span class="fa fa-star " id="starOne" onmouseover="checkedStar(1)" onmouseout="noCheckedStar(1)" onclick="commscore(1)" ondblclick="commnoscore(1)">  </span>
+              <span class="fa fa-star " id="starTwo" onmouseover="checkedStar(2)" onmouseout="noCheckedStar(2)" onclick="commscore(2)" ondblclick="commnoscore(2)">  </span>
+              <span class="fa fa-star " id="starThree" onmouseover="checkedStar(3)" onmouseout="noCheckedStar(3)" onclick="commscore(3)" ondblclick="commnoscore(3)">  </span>
+              <span class="fa fa-star " id="starFour" onmouseover="checkedStar(4)" onmouseout="noCheckedStar(4)" onclick="commscore(4)" ondblclick="commnoscore(4)">  </span>
+              <span class="fa fa-star " id="starFive" onmouseover="checkedStar(5)" onmouseout="noCheckedStar(5)" onclick="commscore(5)" ondblclick="commnoscore(5)">  </span>
+            </div>
+            <br>
+            <div class="form-group">
+              <textarea class="form-control" id="textComm" rows="3" placeholder="Escriba aquí sus comentarios..."></textarea>
+            </div>
+            <button type="button" class="btn btn-primary btn-sm float-right" onclick="insertComm()">Agregar</button>
+        </form>
+        <br>
+        <br>
+        <dt>Comentarios</dt>
+        <hr class="my-3">
+        <dd>
+          <div >
+            <div id="product_Info_comments"></div>
+            <div id="newComment"></div>              
+          </div>
+        </dd>
+        <br>
+        <hr class="my-3">
+        <br>
+        <dt>Productos similares</dt>
+        <hr class="my-3">
+        <dd>
+          <div >
+            <div class="row" id="related_Products"></div>
+          </div>
+        </dd>
+      </div>
+    </main>
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
@@ -49,6 +135,45 @@
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
     </div>
   </footer>
+  <!--   Modales on-sesion -->
+  <div class="modal" id="onSesionMessage" style="cursor: pointer; background-color: rgba(0, 0, 0, 0.75);font-family: 'Raleway', serif;display: none;">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content " style="max-width:800px;cursor:auto">
+        <h1 class="title-onSesionMessage">¡Hola! <i class="far fa-smile"></i></h1>
+        <div class="modal-btn-onsesionmessage" style="font-family: 'Raleway', serif">
+          <button type="button" class="btn-new-user "  onclick="window.location.href='login.html'">Soy nuevo</button>
+          <button type="button" class="btn-load-user"  onclick="window.location.href='login.html'">Ya tengo una cuenta</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--   Modales off-sesion -->
+  <div class="modal"  id="endSesionMessage" style="cursor: pointer; background-color: rgba(0, 0, 0, 0.75);font-family: 'Raleway', serif;display: none;">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content" style="max-width:800px;cursor:auto">
+        <hr>
+        <h4 class="title-offSesionMessage">¿Desea cerrar sesión?</h4>
+        <br>
+        <div class="modal-btn-offsesionmessage">
+          <button type="button" class="btn-off-yes fas fa-check-circle"onclick="endSesion()"></button>
+          <button type="button" class="btn-off-no fas fa-times-circle" onclick="document.getElementById('endSesionMessage').style.display='none'"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Variables
+    var modalonoff = document.getElementById('onSesionMessage');
+    var modaloffoff = document.getElementById('endSesionMessage');
+    
+    // Cuando se realiza un click fuera del modal se cierra.-
+    window.onclick = function(event) {
+      if (event.target == modalonoff || event.target == modaloffoff) {
+        modalonoff.style.display = "none";
+        modaloffoff.style.display = "none";
+      }
+    }
+    </script>  
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -60,7 +185,10 @@
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
+  <script src="js/login.js"></script>
   <script src="js/product-info.js"></script>
+  <script src="js/product-comments.js"></script>
+  <script src="js/cart.js"></script>
 </body>
 
 </html>
