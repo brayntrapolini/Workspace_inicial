@@ -5,7 +5,7 @@ function menuSesion (){
     var menu =`<a class="dropdown-toggle" data-toggle="dropdown"  id="UserSesion" ></a>
                 <div class="menu-user-css dropdown-menu">
                     <a class="menu-intem-user-css dropdown-item" href="my-profile.html"> <i class="fas fa-id-card"></i> Perfil</a>
-                    <a class="menu-intem-user-css dropdown-item" href="cart.html" style="text-align: center;"> <span class="fas fa-shopping-cart" style="float:left"></span><span > Mi Carrito </span><span  id="cartCounter" style="float: right;"></span></a>
+                    <a class="menu-intem-user-css dropdown-item" href="cart.html" style="text-align: center;"> <span class="fas fa-shopping-cart" style="float:left"></span><span > Mi Carrito </span><span  id="cartCounter" style="float: right;">3</span></a>
                     <a class="menu-intem-user-css dropdown-item" href="#" onclick="endSesionMessage()"> <i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
                 </div>`
  
@@ -16,33 +16,33 @@ function menuSesion (){
 
 
 
-
+// Función que se ejecuta al cargar cada pagina para corroborar ciertos elementos.-
 function loadPage(){
 var loginHTML = window.location.href.indexOf("login.html")
 var cartHTML = window.location.href.indexOf("cart.html")
 var sellHTML =window.location.href.indexOf("sell.html")
 var miprofileHTML =window.location.href.indexOf("my-profile.html")
 
-
-    if (loginHTML < 0){
-        if(localStorage.getItem("UserSesion") == null || localStorage.getItem("UserSesion") == ""){
-            // Si ingresa a x paginas sin iniciar sesión lo reenvía al login.-
-            if(cartHTML > - 1 || sellHTML > -1 || miprofileHTML > -1){
-                onSesion()}} 
-        // Si hay un usuario en el localStorage carga el menu y lo muestra.-
-        else{
-            menuSesion()            
-    }}}
+if (loginHTML < 0){
+    if(localStorage.getItem("UserSesion") == null || localStorage.getItem("UserSesion") == ""){
+        // Si ingresa a x paginas sin iniciar sesión lo reenvía al login.-
+        if(cartHTML > - 1 || sellHTML > -1 || miprofileHTML > -1){
+            onSesion()}} 
+    // Si hay un usuario en el localStorage carga el menu y lo muestra.-
+    else{
+        menuSesion()            
+    }
+}}
     
 
-
+// Función que corrobora si se inició sesión y muestra un mensaje si no es así.-
 function onSesion(){
     if(localStorage.getItem("UserSesion") == null || localStorage.getItem("UserSesion") == ""){
         document.getElementById("onSesionMessage").style.display='block';
         
 }}
 
-
+// Función que pregunta si desea cerrar la Sesión.-
 function endSesionMessage(){
     document.getElementById("endSesionMessage").style.display='block';
 }
@@ -53,7 +53,7 @@ function endSesionMessage(){
 function endSesion(){
     window.location.href="index.html";
     localStorage.removeItem("UserSesion");
-    }
+}
 
 
 
@@ -107,10 +107,10 @@ function validarUser(){
     }            
           
     else {
-
-        
         alert("Error al Iniciar Sesión, dispositivo no compatible.");
-        return false;}}
+        return false;
+    }
+}
 
 
 

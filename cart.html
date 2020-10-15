@@ -46,14 +46,96 @@
       <a class="py-2 d-none d-md-inline-block" href="#" id="menuSesion" onclick="onSesion()"><i class="fas fa-user-slash"></i> Ingresar</a>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 11/10/2020) y Entrega 6 (Fecha de entrega: 25/10/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+  <div class="container">
+    <div class="text-center p-4">
+      <h2>Carrito de compras</h2>
+    </div>
+
+    <!--filtro de moneda en que se realizara la compra-->
+    <div class="row">
+      <div class="col text-right">
+          <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+              <label class="btn btn-light active" id="pesos" onclick="setTimeout('filterCurrencyChange()',100);" >
+                  <input type="radio" id="uyu" autocomplete="off"  checked>UYU
+              </label>
+              <label class="btn btn-light" id="dolar" onclick="setTimeout('filterCurrencyChange()',100);">
+                  <input type="radio" id="usd" autocomplete="off"  >USD
+              </label>
+          </div>
+      </div>
+    </div>
+
+     <!--productos-->
+    <h4 class="mb-3"><strong>Artículos a comprar</strong></h4>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Costo</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Subtotal</th>
+        </tr>
+      </thead>
+      <tbody id="cart-products"></tbody>
+    </table>
+    <hr>
+    <br>
+    
+    <!--Metodo de Envío-->
+    <div class="row">
+      <div class="col">
+        <h4 class="mb-3"><strong>Tipo de envío</strong></h4>
+        <form>
+          <p>Por favor seleccione un método de envío:</p>
+          <input type="radio" id="shippPremium" name="shipp" value="2" checked>
+          <label for="shippPremium">Premium</label><br>
+          <input type="radio" id="shippExpress" name="shipp" value="1">
+          <label for="shippExpress">Express</label><br>
+          <input type="radio" id="shippStandar" name="shipp" value="0">
+          <label for="shippStandar">Standar</label>
+        </form>
+        <br>
+        <h4 class="mb-3"><strong>Dirección de envío</strong></h4>
+        <form>
+          <div class="form-row">
+            <div class="col-5">
+              <input type="text" class="form-control" placeholder="Calle" required>
+            </div>
+            <div class="col-2">
+              <input type="text" class="form-control" placeholder="Número" required>
+            </div>
+          </div>
+          <br>
+          <div class="form-row">
+            <div class="col-5">
+              <input type="text" class="form-control" placeholder="Esquina">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <br>
+    <br>
+
+    <!--Costos-->
+    <div class="row">
+      <div class="col">
+        <h4 class="mb-3"><strong>Costos</strong></h4>
+        <ul class = "list-group mb-3">
+          <li class="list-group-item justify-content-between d-flex"><h5>SubTotal</h5><span id="subtotal"style="font-weight:bold;"></span></li>
+          <li class="list-group-item justify-content-between d-flex"><h5>Envío</h5><span id="shipping"style="font-weight:bold;"></span></li>
+          <li class="list-group-item justify-content-between d-flex"><h5>Total </h5><span id="total"style="font-weight:bold;"></span></li>
+        </ul>
+      </div>
     </div>
   </div>
+
+
+
+
+  
   <!--   Modales on-sesion -->
   <div class="modal" id="onSesionMessage" style="cursor: auto; background-color: white;font-family: 'Raleway', serif;display: none;">
     <div class="modal-dialog modal-dialog-centered modal-sm">

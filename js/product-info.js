@@ -1,3 +1,5 @@
+// Variables
+
 var product_Info = {};
 var products= {};
 var comments ={};
