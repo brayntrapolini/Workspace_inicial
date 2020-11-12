@@ -69,7 +69,7 @@ function showRelatedProduct(prod,prodRelated){
                 <h5 class="card-title"> ` + prod[i].name +`</h5>
                 <p class="card-text">`+prod[i].description+`</p>
                 <p class="card-text">`+prod[i].currency+`  `+prod[i].cost+`</p>
-                <a href="product-info.html" class="btn btn-primary btn-sm">Ver producto</a>
+                <a href="product-info.html" class="btn btn-sm" style="background-color: darkred;color: white;">Ver producto</a>
             </div>
         </div>`}
     relatedProducts.innerHTML = htmlContentToAppend;}

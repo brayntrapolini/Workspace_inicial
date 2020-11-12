@@ -31,7 +31,7 @@ function insertComm(){
 
 
 
-//Funcón comentario
+//Función comentario
 
 function commInsert(u){
     var dateOn = new Date();

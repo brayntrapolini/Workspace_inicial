@@ -45,23 +45,27 @@ function showProductsList(){
         if (((minCost == undefined) || (minCost != undefined && parseInt(productList.cost) >= minCost)) &&
             ((maxCost == undefined) || (maxCost != undefined && parseInt(productList.cost) <= maxCost))){
 
-            htmlContentToAppend += `
-            <a href="product-info.html" class="list-group-item list-group-item-action">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="` + productList.imgSrc + `" alt="` + productList.description + `" class="img-thumbnail">
-                    </div>
-                    <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1"><strong>`+ productList.name +`</strong></h4>
-                            <small class="text-muted">` + productList.soldCount + ` Vendidos </small>
-                        </div>
-                        <p class="mb-1">` + productList.description + `</p> <br>
-                        <p class="mb-1">` + productList.currency +"  "+ productList.cost + `</p>
-                    </div>
-                </div>
-            </a>
-            `
+            htmlContentToAppend += `<div class="col-md-6">
+                                        <div class="card mb-4 shadow-sm" style="border: 3px solid rgba(0,0,0,.125);">
+                                            <a href="product-info.html" style="color:black;text-decoration:none;">
+                                                <img src="` + productList.imgSrc + `" alt="` + productList.description + `" class="card-img-top img-Thumbnail">
+                                                <div class="card-body">
+                                                    <h5 class="card-title"><strong>`+ productList.name +`</strong></h5>
+                                                    <p class="card-text">` + productList.description + `</p>
+                                                </div>
+                                                <div class="card-footer">
+                                                <div class="row" >
+                                                    <div class="col">
+                                                        <p class="mb-1"><strong>` + productList.currency + "  " + productList.cost + `</strong></p>
+                                                    </div>
+                                                    <div class="col">
+                                                        <small class="text-muted">` + productList.soldCount + ` Vendidos </small>
+                                                    </div>
+                                                </div>  
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>`
         }
 
         document.getElementById("prod-list-container").innerHTML = htmlContentToAppend;

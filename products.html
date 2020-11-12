@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <title>eMercado - Todo lo que busques está aquí</title>
+    <title>e-Mercado - Todo lo que busques está aquí</title>
 
     <link rel="icon" href="img/favicon.ico">
 
@@ -16,13 +16,32 @@
     <link href="css/styles.css" rel="stylesheet">
   </head>
   <body>
-    <nav class="site-header sticky-top py-1 bg-dark">
-      <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="index.html"><i class="fas fa-store"></i> Inicio</a>
-        <a class="py-2 d-none d-md-inline-block" href="categories.html"><i class="fas fa-tags"></i> Categorías</a>
-        <a class="py-2 d-none d-md-inline-block" href="products.html"><i class="fas fa-tag"></i> Productos</a>
-        <a class="py-2 d-none d-md-inline-block" href="sell.html"><i class="fas fa-cash-register"></i> Vender</a>
-        <a class="py-2 d-none d-md-inline-block" href="#" id="menuSesion" onclick="onSesion()"><i class="fas fa-user-slash"></i> Ingresar</a>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: darkred;">
+      <a class="navbar-brand" href="#" style="color:white;"><strong>e-Mercado</strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuResponsive"
+        aria-controls="menuResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuResponsive">
+        <ul class="navbar-nav  container justify-content-between">
+          <li class="nav-item ">
+            <a class="nav-link" href="index.html"><i class="fas fa-store"></i> Inicio</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="categories.html"><i class="fas fa-tags"></i> Categorias</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="products.html"><i class="fas fa-tag"></i> Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html"><i class="fas fa-cash-register"></i>  Vender</a>
+          </li>
+          <li class="nav-item" id="menuSesion">
+            <a class="nav-link" href="#" onclick="onSesion()">
+              <i class="fas fa-user-slash"></i> Ingresar
+            </a>
+          </li>
+        </ul>
       </div>
     </nav>
     <main role="main" class="pb-5">
@@ -68,10 +87,10 @@
                 </div>
               </div>
           </div>
-          <div class="row">
-              <div class="list-group" id="prod-list-container">
-              </div>
-          </div>
+          <br>
+            <div class="container">
+              <div class="row" id="prod-list-container"></div>
+            </div>
       </div>
   </main>  
     <footer class="text-muted bg-light">

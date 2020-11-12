@@ -147,22 +147,19 @@ a.custom-card:hover {
 
 /************** ESTILOS NUEVOS ******************/
 
-.site-header .menu-user-css a {
-  color: white;
 
-}
 
 .menu-user-css{
-background-color: #343a40;
-border:1px solid rgba(0,0,0,.15);
+background-color:darkred;
+border:1px solid rgb(131, 1, 1);
 }
 
 .menu-intem-user-css{
-  color:white;}
+  color:rgba(255,255,255,.5);}
 
 .menu-intem-user-css:focus,.menu-intem-user-css:hover{
-  text-decoration:underline;
-  background-color:#3b4046;}
+  color: rgba(255,255,255,.75);
+  background-color:rgb(131, 1, 1);}
 
 .menu-intem-user-css.active,.menu-intem-user-css:active{
   text-decoration:none;
@@ -177,19 +174,20 @@ border:1px solid rgba(0,0,0,.15);
   font-weight: bold;
 }
 
-#cartCounter{
-  height: 22px;
-  width: 22px;
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
-  border-radius: 50%;
-  background:rgb(163, 156, 156);
+.btn-darkred{
+  background-color: darkred;
+  color: rgba(255,255,255,.75);
 }
+.btn-darkred:hover{
+  color: white;
+}
+
+
+
 
 /*************************** ESTILOS MODAL ON-SESION ***********************************/
 .title-onSesionMessage{
-  color:rgb(247, 16, 123);
+  color:darkred;
   text-align: center;
 }
 
@@ -217,7 +215,7 @@ border:1px solid rgba(0,0,0,.15);
 }
 
 .btn-new-user {
-  background-color: #343a40;
+  background-color: darkred;
   color: rgba(255, 255, 255, 0.952);
 }
 
@@ -225,7 +223,7 @@ border:1px solid rgba(0,0,0,.15);
 /*************************** ESTILOS MODAL OFF-SESION ***********************************/
 
 .title-offSesionMessage{
-  color:rgb(247, 16, 123);
+  color:black;
   text-align: center;
 }
 
@@ -244,7 +242,7 @@ border:1px solid rgba(0,0,0,.15);
   opacity: 1;
   border: none;
   float: left;
-  color: rgba(255, 255, 255, 0.952);
+  
 }
 
 .btn-off-no:hover {
@@ -255,11 +253,13 @@ border:1px solid rgba(0,0,0,.15);
 }
 
 .btn-off-yes {
-  background:#46a049;
+  color: rgba(255, 255, 255, 0.952);
+  background: darkred;
 }
 
 .btn-off-no {
-  background: #da190b;
+  color: rgba(255, 255, 255, 0.952);
+  background: darkred;
 }
 
 

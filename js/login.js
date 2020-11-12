@@ -1,11 +1,13 @@
 //Función para ver el menu y el usuario conectado.-
 function menuSesion (){
-    var a_menu = document.getElementById("menuSesion")
-
-    var menu =`<a class="dropdown-toggle" data-toggle="dropdown"  id="UserSesion" ></a>
-                <div class="menu-user-css dropdown-menu">
+    
+    var a_menu = document.getElementById("menuSesion");
+    a_menu.classList.add('dropdown');
+    
+    var menu =`<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  id="UserSesion" ></a>
+                <div class="menu-user-css dropdown-menu" aria-labelledby="UserSesion">
                     <a class="menu-intem-user-css dropdown-item" href="my-profile.html"> <i class="fas fa-id-card"></i> Perfil</a>
-                    <a class="menu-intem-user-css dropdown-item" href="cart.html" style="text-align: center;"> <span class="fas fa-shopping-cart" style="float:left"></span><span > Mi Carrito </span><span  id="cartCounter" style="float: right;">3</span></a>
+                    <a class="menu-intem-user-css dropdown-item " href="cart.html"> <span class="fas fa-shopping-cart" ></span> <span > Mi Carrito </span> <span  id="cartCounter" class="badge badge-light">3</span></a>
                     <a class="menu-intem-user-css dropdown-item" href="#" onclick="endSesionMessage()"> <i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
                 </div>`
  
@@ -53,6 +55,7 @@ function endSesionMessage(){
 function endSesion(){
     window.location.href="index.html";
     localStorage.removeItem("UserSesion");
+    localStorage.removeItem("dataProfile")
 }
 
 

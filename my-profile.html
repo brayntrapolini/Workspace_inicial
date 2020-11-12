@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <title>eMercado - Todo lo que busques está aquí</title>
+  <title>e-Mercado - Todo lo que busques está aquí</title>
 
   <link rel="icon" href="img/favicon.ico">
 
@@ -37,21 +37,92 @@
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html"><i class="fas fa-store"></i> Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html"><i class="fas fa-tags"></i> Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html"><i class="fas fa-tag"></i> Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html"><i class="fas fa-cash-register"></i> Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="#" id="menuSesion" onclick="onSesion()"><i class="fas fa-user-slash"></i> Ingresar</a>
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: darkred;">
+    <a class="navbar-brand" href="#" style="color:white;"><strong>e-Mercado</strong></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuResponsive"
+      aria-controls="menuResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menuResponsive">
+      <ul class="navbar-nav  container justify-content-between">
+        <li class="nav-item ">
+          <a class="nav-link" href="index.html"><i class="fas fa-store"></i> Inicio</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="categories.html"><i class="fas fa-tags"></i> Categorias</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="products.html"><i class="fas fa-tag"></i> Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sell.html"><i class="fas fa-cash-register"></i> Vender</a>
+        </li>
+        <li class="nav-item" id="menuSesion">
+          <a class="nav-link" href="#" onclick="onSesion()">
+            <i class="fas fa-user-slash"></i> Ingresar
+          </a>
+        </li>
+      </ul>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <div class="container pb-5">
+    <div class="text-center p-4">
+      <h2><strong>Mí Perfil</strong> </h2>
+      <p class="lead">Aquí podras completar tu información personal.</p>
+    </div>
+    <div class="row">
+      <div class="col-md-7">
+        <form action="#">
+          <div class="row">
+            <div class="col">
+              <label for="nameProfile">Nombre</label>
+              <input type="text" class="form-control" id="nameProfile" placeholder="Ingrese su nombre"  disabled="true">
+            </div>
+            <div class="col">
+              <label for="lastNameProfile">Apellido</label>
+              <input type="text" class="form-control" id="lastNameProfile" placeholder="Ingrese su apellido"  disabled="true">
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-4">
+              <label for="bornDateProfile">Fecha de Nacimiento</label>
+              <input type="date" class="form-control" id="bornDateProfile" disabled="true">
+            </div>
+            <div class="col-2">
+              <label for="ageProfile">Edad</label>
+              <input type="number" class="form-control" id="ageProfile" placeholder="--" disabled>
+            </div>
+            <div class="col-6">
+              <label for="telephoneNumberProfile">Teléfono de contacto</label>
+              <input type="number" class="form-control" id="telephoneNumberProfile" placeholder="Ingrese su teléfono de contacto" minlength="9"  disabled="true">
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-8">
+              <label for="emailProfile">Correo electrónico</label>
+              <input type="email" class="form-control" id="emailProfile" placeholder="Ingrese su correo electrónico"  disabled="true">
+            </div>
+          </div>
+          <br>
+          <div id="buttonOptionsProfile">
+            <button type="submit" class="btn btn-darkred" onclick="editData()">Editar</button>
+          </div>
+          <br>
+        </form> 
+      </div>
+      <div class="col-md-5">
+        <div class="text-center">
+          <div  class="rounded">
+            <img id="imageProfile" src="img/photo-user.jpg" onerror="this.src='img/photo-user.jpg'" alt="Foto de Perfil" style="width: 250px ;height: 250px ;">
+          </div>
+          <div>
+            <label for="imageLinkProfile">Foto de Perfil</label>
+            <input type="url" class="form-control" id="imageLinkProfile" placeholder="Ingrese la URL de su imagen" disabled="true">
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <footer class="text-muted bg-light">

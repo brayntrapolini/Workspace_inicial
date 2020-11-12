@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <title>eMercado - Todo lo que busques está aquí</title>
+  <title>e-Mercado - Todo lo que busques está aquí</title>
 
   <link rel="icon" href="img/favicon.ico">
 
@@ -15,6 +15,16 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 
   <style>
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none; 
+        margin: 0; 
+    }
+
+    input[type=number] { -moz-appearance:textfield;
+    }
+
+
     .bd-placeholder-img {
       font-size: 1.125rem;
       text-anchor: middle;
@@ -37,13 +47,32 @@
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html"><i class="fas fa-store"></i> Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html"><i class="fas fa-tags"></i> Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html"><i class="fas fa-tag"></i> Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html"><i class="fas fa-cash-register"></i> Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="#" id="menuSesion" onclick="onSesion()"><i class="fas fa-user-slash"></i> Ingresar</a>
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: darkred;">
+    <a class="navbar-brand" href="#" style="color:white;"><strong>e-Mercado</strong></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuResponsive"
+      aria-controls="menuResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menuResponsive">
+      <ul class="navbar-nav  container justify-content-between">
+        <li class="nav-item ">
+          <a class="nav-link" href="index.html"><i class="fas fa-store"></i> Inicio</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="categories.html"><i class="fas fa-tags"></i> Categorias</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="products.html"><i class="fas fa-tag"></i> Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sell.html"><i class="fas fa-cash-register"></i> Vender</a>
+        </li>
+        <li class="nav-item" id="menuSesion">
+          <a class="nav-link" href="#" onclick="onSesion()">
+            <i class="fas fa-user-slash"></i> Ingresar
+          </a>
+        </li>
+      </ul>
     </div>
   </nav>
 
@@ -68,6 +97,11 @@
 
      <!--productos-->
     <h4 class="mb-3"><strong>Artículos a comprar</strong></h4>
+    <div tabindex="0" id="focusAlertBuyConfirm"></div>
+    <p id="alertBuyConfirm"></p>
+    <div tabindex="0" id="focusAlertCartEmpty"></div>
+    <p id="alertCartEmpty"></p>
+
     <table class="table">
       <thead>
         <tr>
@@ -86,31 +120,35 @@
     <!--Metodo de Envío-->
     <div class="row">
       <div class="col">
-        <h4 class="mb-3"><strong>Tipo de envío</strong></h4>
+          <h4 class="mb-3"><strong>Tipo de envío</strong></h4>
+          <div tabindex="0" id="focusAlertShipp"></div>
+          <p id="alertShipp"></p> 
         <form>
           <p>Por favor seleccione un método de envío:</p>
-          <input type="radio" id="shippPremium" name="shipp" value="2" checked>
-          <label for="shippPremium">Premium</label><br>
-          <input type="radio" id="shippExpress" name="shipp" value="1">
-          <label for="shippExpress">Express</label><br>
-          <input type="radio" id="shippStandar" name="shipp" value="0">
-          <label for="shippStandar">Standar</label>
+          <input type="radio" id="shippPremium" name="shipp" class="shipp" value="2" >
+          <label for="shippPremium">Premium 2 a 5 días (15%)</label><br>
+          <input type="radio" id="shippExpress" name="shipp"  class="shipp" value="1">
+          <label for="shippExpress">Express 5 a 8 días (7%)</label><br>
+          <input type="radio" id="shippStandar" name="shipp" class="shipp" value="0" >
+          <label for="shippStandar">Standar 12 a 15 días (5%)</label>
         </form>
         <br>
-        <h4 class="mb-3"><strong>Dirección de envío</strong></h4>
+        <h4 class="mb-3" id="focusAddress"><strong>Dirección de envío</strong></h4>
+        <div tabindex="0" id="focusAlertAddress"></div>
+        <p id="alertAddress"></p>
         <form>
           <div class="form-row">
             <div class="col-5">
-              <input type="text" class="form-control" placeholder="Calle" required>
+              <input type="text" class="form-control shippAddress" id="street" placeholder="Calle" required>
             </div>
             <div class="col-2">
-              <input type="text" class="form-control" placeholder="Número" required>
+              <input type="number" class="form-control shippAddress" id="numberStreet" placeholder="Número" required>
             </div>
           </div>
           <br>
           <div class="form-row">
             <div class="col-5">
-              <input type="text" class="form-control" placeholder="Esquina">
+              <input type="text" class="form-control shippAddress" id="corner" placeholder="Esquina">
             </div>
           </div>
         </form>
@@ -130,12 +168,180 @@
         </ul>
       </div>
     </div>
+  <br>
+  <!--Medios de Pago-->
+  <div class="row">
+    <div class="col">
+      <h4 class="mb-3"><strong>Método de Pago</strong></h4>
+      <div tabindex="0" id="focusAlertPayment"></div>
+      <p id="alertPayment"></p>
+      <ul class="list-group mb-3">
+        <div class="row">
+          <li class="list-group-item d-flex" style="background-color: rgb(231, 228, 228);">
+            <!-- Boton del modal de método de pago -->
+            <p type=button data-toggle="modal" data-target="#paymentMethod" id="paymentMethodButton" style="color:blue;background-color: rgb(231, 228, 228);">
+              <span id="paymentMethodSelected">Seleccionar método</span>
+            </p>
+          </li><div class="col-2">
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-success btn-block" id="confirmBuy" onclick="confirmBUY()"> FINALIZAR COMPRA </button>
+          </div>          
+        </div>
+      </ul>
+    </div>
   </div>
 
+</div>
 
 
 
-  
+
+
+
+<!--------------------------------------------------- Modales ------------------------------------------------>
+
+<!-- Modal para seleccionar el método de pago-->
+<div class="modal fade" id="paymentMethod" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Seleccione un método de Pago</h5><br>
+        <button type="button" class="close" data-dismiss="modal" onclick="clearMethodPayment()" aria-label="Cerrar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body ">
+        <article class="card">
+          <div class="card-body p-5">
+            <ul class="nav bg-light nav-pills nav-fill row" role="tablist">
+              <li class="nav-item" id="method1">
+                <a class="nav-link active" data-toggle="pill" href="#paymentCARD">
+                  <i class="fa fa-credit-card"></i>Tarjeta de Crédito</a></li>
+              <li class="nav-item" id="method2">
+                <a class="nav-link" data-toggle="pill" href="#paymentBANK">
+                  <i class="fa fa-university"></i>Transferencia Bancaria</a></li>
+            </ul>
+          <hr>
+          <br>
+          <!-- Método de pago Tarjeta-->
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="paymentCARD">
+              <div id="cardAlertImputCheck"></div>
+              <form role="form">
+                <!-- Completa el nombre-->
+                <div class="form-group">
+                  <label for="nameCard">Nombre completo que figura en la tarjeta</label>
+                  <div class="row">
+                    <div class="col">
+                      <input type="text" class="form-control paymentCheckCard" name="nameCard" id="nameCard" required="">  
+                    </div>
+                    <div class="col-1">
+                      <span id="iconCardCheck0"></span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Completa el número de tarjeta-->
+                <div class="form-group">
+                  <label for="numberCard">Número de tarjeta</label>
+                  <div class="row">
+                    <div class="col">
+                      <div class="input-group">
+                        <input type="number" class="form-control paymentCheckCard" name="numberCard" id="numberCard" placeholder="XXXX XXXX XXXX XXXX">
+                        <div class="input-group-append">
+                          <span class="input-group-text text-muted">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-amex"></i>  
+                            <i class="fab fa-cc-mastercard"></i>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-1">
+                      <span id="iconCardCheck1"></span>
+                    </div>
+                  </div>
+                </div> 
+                <!-- Completa campo de vencimiento y código de seguridad-->
+                <div class="row">
+                  <div class="col-sm-8">
+                    <div class="form-group">
+                      <label><span class="hidden-xs">Vencimiento</span> </label>
+                      <div class="row">
+                        <div class="col">
+                          <div class="input-group paymentCheckCard">
+                            <input type="number" class="form-control " placeholder="MM" name="" id="monthCard" min="01" max="12">
+                            <input type="number" class="form-control " placeholder="YYYY" name="" id="yearCard" min="2000">
+                          </div>
+                        </div>
+                        <div class="col-1">
+                          <span id="iconCardCheck2"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label>CVV</label>
+                      <div class="row">
+                        <div class="col">
+                          <input type="number" class="form-control paymentCheckCard" id="cvvCard" required="">
+                        </div>
+                        <div class="col-1">
+                          <span id="iconCardCheck3"></span>
+                        </div>
+                      </div>
+                    </div> 
+                  </div>
+                </div> 
+                <button class="btn btn-primary btn-block" type="button" onclick="confirmPaymentCreditCard()"> Confirmar</button>
+              </form>
+            </div> 
+            <!-- Método de pago Transferencia Bancaria-->
+            <div class="tab-pane fade" id="paymentBANK">
+              <div id="bankAlertImputCheck"></div>
+                <form action="">
+                  <!-- Selecciona el nombre del Banco-->
+                  <div class="form-group">
+                    <label for="nameBank">Seleccione su Banco de la lista</label>
+                    <div class="row">
+                      <div class="col">
+                        <select class="form-control paymentCheckBanck" id="nameBank" name="nameBank">
+                          <option selected value="0"> -Seleccione una opción-</option>
+                          <option value="1">BANCO 1</option>
+                          <option value="2">BANCO 2</option>
+                          <option value="3">BANCO 3</option>
+                          <option value="4">BANCO 4</option>
+                        </select>
+                      </div>
+                      <div class="col-1">
+                        <span id="iconBankCheck0"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Completa el número de Cuenta Bancaria-->
+                  <div class="form-group">
+                    <label for="numberAcount">Ingrese su número de cuenta Bancario</label>
+                    <div class="row">
+                      <div class="col">
+                        <input type="number" class="form-control paymentCheckBanck" name="numberAcount" id="numberAcount" required="" min="0">
+                      </div>
+                      <div class="col-1">
+                        <span id="iconBankCheck1"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="btn btn-primary btn-block" type="button" onclick="confirmPaymentBank()"> Confirmar </button>
+                </form>
+              </div> 
+            </div>
+          </div>
+        </article> 
+      </div>
+    </div>
+  </div>
+</div>
+
   <!--   Modales on-sesion -->
   <div class="modal" id="onSesionMessage" style="cursor: auto; background-color: white;font-family: 'Raleway', serif;display: none;">
     <div class="modal-dialog modal-dialog-centered modal-sm">
@@ -149,6 +355,7 @@
       </div>
     </div>
   </div>
+
 <!--   Modales off-sesion -->
   <div class="modal"  id="endSesionMessage" style="cursor: pointer; background-color: rgba(0, 0, 0, 0.75);font-family: 'Raleway', serif;display: none;">
     <div class="modal-dialog modal-dialog-centered modal-sm">
